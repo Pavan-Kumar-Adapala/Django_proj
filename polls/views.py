@@ -7,7 +7,7 @@ from .models import Question, Choice
 
 
 # using class based views and also generic views for short and simple code.
-class IndexView(generic.ListView):  
+class IndexView(generic.ListView):
     '''The indexView is home page of polls application'''
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
@@ -39,7 +39,7 @@ def vote(request, question_id):
         selected_choice = question.choice_set.get(pk=request.POST[ck[0]])
         # selected_choice = question.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
-        return render(request, 'polls/detail.html', 
+        return render(request, 'polls/detail.html', \
                       {'question': question, 'error_message': "You didn't select a choice."})
     else:
         selected_choice.votes += 1
