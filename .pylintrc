@@ -1,0 +1,9 @@
+[MESSAGES CONTROL]
+disable=
+    E1101,               # Class has no member 'objects'
+    E0307,               # `__str__` does not return a string
+    C0103,               # Constant name does not conform to UPPER_CASE
+    C0301,               # Line too long
+    C0114,               # Missing module docstring
+    C0115,               # Missing class docstring
+    C0116                # Missing function docstring
