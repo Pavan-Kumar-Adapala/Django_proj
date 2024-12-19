@@ -60,9 +60,9 @@ jobs:
 
       - name: Set DJANGO_SECRET_KEY environment variable
         env:
-          DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}  # Use the repository secret
+          DJANGO_SECRET_KEY: ${{ secrets.SECRET_KEY }}  # Use the repository secret
         run: |
-          echo 'DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }}' >> $GITHUB_ENV 
+          echo 'SECRET_KEY=${{ secrets.SECRET_KEY }}' >> $GITHUB_ENV 
 
       - name: Run Django Tests
         run: python manage.py test
