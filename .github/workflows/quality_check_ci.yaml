@@ -58,5 +58,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # Install the dependencies again if not found in cache
 
+      - name: Set DJANGO_SECRET_KEY environment variable
+        env:
+          DJANGO_SECRET_KEY: ${{ secrets.DJANGO_SECRET_KEY }}  # Use the repository secret
+        run: |
+          echo "DJANGO_SECRET_KEY=${{ secrets.DJANGO_SECRET_KEY }}" >> $GITHUB_ENV 
+
       - name: Run Django Tests
         run: python manage.py test
