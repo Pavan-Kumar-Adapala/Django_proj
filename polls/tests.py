@@ -1,11 +1,8 @@
 from django.test import TestCase
 from django.urls import reverse
-from .models import Question, Choice
-from django.utils.timezone import now
+
 
 class PollsAppTests(TestCase):
-
-
     def test_index_view_status_code(self):
         """Test if the index view returns a 200 status code."""
         response = self.client.get(reverse('polls:index'))

@@ -4,18 +4,20 @@ from django.urls import reverse
 from django.views import generic
 from .models import Question, Choice
 
-# using class based views and also generic views for short and simple code.
-class IndexView(generic.ListView):
+
+class IndexView(generic.ListView): # using class based views and also generic views for short and simple code.
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
 
     def get_queryset(self):
         return Question.objects.order_by('-Pub_date')[:5]
 
+
 class DetailView(generic.DetailView):
     model = Question
     #context_object_name = 'question_choice_list'
     template_name = 'polls/detail.html'
+
 
 class ResultsView(generic.DetailView):
     model = Question
@@ -27,9 +29,9 @@ def vote(request, question_id):
         keys = request.POST.keys()
         ck = [k for k in keys if k[0:6]=="choice"]
         selected_choice = question.choice_set.get(pk=request.POST[ck[0]])
-        #selected_choice = question.choice_set.get(pk=request.POST['choice'])
+        # selected_choice = question.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
-        return render(request, 'polls/detail.html', {'question': question, 'error_message': "You didn't select a choice.",})
+        return render(request, 'polls/detail.html', {'question': question, 'error_message': "You didn't select a choice."})
     else:
         selected_choice.votes += 1
         selected_choice.save()
