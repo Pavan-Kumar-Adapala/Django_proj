@@ -41,7 +41,7 @@ jobs:
           python-version: 3.12
 
       - name: Run Lint Tests
-        run: pylint ./polls/
+        run: pylint ./polls
 
 
   run-tests:
