@@ -1,13 +1,18 @@
 from django.test import TestCase
 from django.urls import reverse
+from .models import Question, Choice
+from django.utils.timezone import now
 
-class PollAppTestCase(TestCase):
-    def test_homepage_status_code(self):
-        """Ensure the /poll homepage is reachable."""
-        response = self.client.get(reverse('poll:home'))
+class PollsAppTests(TestCase):
+
+
+    def test_index_view_status_code(self):
+        """Test if the index view returns a 200 status code."""
+        response = self.client.get(reverse('polls:index'))
         self.assertEqual(response.status_code, 200)
 
-    def test_homepage_content(self):
-        """Ensure a specific text appears in the /poll homepage."""
-        response = self.client.get(reverse('poll:home'))
-        self.assertContains(response, "Welcome to the Poll App")
+    def test_owner_view(self):
+        """Test the owner view response."""
+        response = self.client.get(reverse('polls:owner'))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Hello, world. a8c5a734 is the polls owner.")
