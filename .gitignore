@@ -1,4 +1,5 @@
 # Ignore compiled Python bytecode files
 *.pyc
+*_initial.py
 # Ignore Python cache directories
 __pycache__/

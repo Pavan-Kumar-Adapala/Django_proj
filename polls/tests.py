@@ -1,8 +1,10 @@
+'''Unit tests of polls application'''
 from django.test import TestCase
 from django.urls import reverse
 
 
 class PollsAppTests(TestCase):
+    '''Polls app tests'''
     def test_index_view_status_code(self):
         """Test if the index view returns a 200 status code."""
         response = self.client.get(reverse('polls:index'))

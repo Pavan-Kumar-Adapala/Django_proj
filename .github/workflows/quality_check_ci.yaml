@@ -3,6 +3,8 @@ name: CI Pipeline
 on:
   pull_request:
     branches: ["development"]
+    paths:
+      - '**.py'  # Filters to only Python file
 
 jobs:
   lint-and-quality:
