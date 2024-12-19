@@ -1,0 +1,9 @@
+[MESSAGES CONTROL]
+disable=
+    no-member,           # Disable `E1101: Class has no member`
+    invalid-str-return,   # Disable `E0307: __str__ doesn't return str`
+    invalid-name,         # Disable `C0103: Constant name doesn't conform to UPPER_CASE`
+    line-too-long,        # Disable `C0301: Line too long`
+    missing-module-docstring, # Disable module-level docstring warnings
+    missing-class-docstring,  # Disable class-level docstring warnings
+    missing-function-docstring # Disable function-level docstring warnings

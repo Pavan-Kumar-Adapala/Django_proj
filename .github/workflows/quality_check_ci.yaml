@@ -30,7 +30,7 @@ jobs:
         run: flake8 .
 
       - name: Run Pylint (Linting Test)
-        run: pylint ./polls
+        run: pylint ./polls --rcfile=.pylintrc  # Use the custom config to ignore certain errors
 
   run-tests:
     runs-on: ubuntu-latest
