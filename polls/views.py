@@ -25,11 +25,11 @@ class ResultsView(generic.DetailView):
 
 
 def vote(request, question_id):
-    question = get_object_or_404(Question, pk = question_id)
+    question = get_object_or_404(Question, pk=question_id)
     try:
         keys = request.POST.keys()
-        ck = [k for k in keys if k[0:6]=="choice"]
-        selected_choice = question.choice_set.get(pk = request.POST[ck[0]])
+        ck = [k for k in keys if k[0:6] == "choice"]
+        selected_choice = question.choice_set.get(pk=request.POST[ck[0]])
         # selected_choice = question.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
         return render(request, 'polls/detail.html', {'question': question, 'error_message': "You didn't select a choice."})
