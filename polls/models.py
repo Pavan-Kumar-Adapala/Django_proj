@@ -9,8 +9,7 @@ class Question(models.Model):
 
     def __str__(self):
         return self.question_tpy
-    
-    def was_published_recently(self):
+    def was_published_recently(self):  # noqa
         return self.Pub_date >= timezone.now() - datetime.timedelta(days=1)
 
 
