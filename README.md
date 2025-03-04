@@ -9,7 +9,8 @@
 **Environment:** Django | Python | GitHub Actions | Flake8 | Pylint | Git and GitHub
   
  <br>
-  **Abstimmungsanwendung mit automatisierter CI/CD-Pipeline unter Verwendung von GitHub Actions**  
+
+**Abstimmungsanwendung mit automatisierter CI/CD-Pipeline unter Verwendung von GitHub Actions**  
 
 **Projekttyp:** Eigenständiges Projekt  
 
