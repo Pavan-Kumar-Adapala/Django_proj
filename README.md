@@ -1,4 +1,4 @@
-**Title:** **Polling Application with Automated CI/CD Pipeline using GitHub Actions**
+**Polling Application with Automated CI/CD Pipeline using GitHub Actions**
 **Project Type:** Independent Project  
 - Developed a **Django-based polling application** with a structured **branching strategy** using **main** and **development** branches for efficient collaboration.
 - Implemented **GitHub Actions CI/CD pipeline** to automate **code quality checks and unit testing** on pull requests to the development branch.
